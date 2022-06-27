@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-grafica1',
   templateUrl: './grafica1.component.html',
   styles: [
   ]
 })
-export class Grafica1Component implements OnInit {
+export class Grafica1Component  {
 
-  constructor() { }
+  public labels1 : string[] ;
+  public data1: number[];
 
-  ngOnInit(): void {
-  }
+constructor()
+{
+  this.labels1 = [ 'Nelson Labels1', 'Nelson Labels1', 'Nelson Labels1' ];
+  this.data1 = [ 10, 15, 45 ];
+}
+
 
 }
