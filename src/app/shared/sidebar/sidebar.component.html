@@ -14,47 +14,29 @@
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
+                        <li><a  routerLink="account-setting">Account Setting</a></li>
+                        <li><a routerLink="/login">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span
-                                class="label label-rouded label-themecolor pull-right">4</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
-                        <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+
+                <li *ngFor="let item of menuItems"> 
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-gauge"></i>
+                        <span class="hide-menu">{{item.titulo }}
+                            <span class="label label-rouded label-themecolor pull-right">{{item.submenu.length}}                                
+                        </span>
+                      </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse" >
+                        <li *ngFor="let subitem of item.submenu">
+                            <a [routerLink]="subitem.url">{{subitem.titulo}}                                 
+                            </a>
+                        </li>
+                       
                     </ul>
                 </li>
-
-
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-table"></i><span class="hide-menu">Tables</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="table-basic.html">Basic Tables</a></li>
-                        <li><a href="table-layout.html">Table Layouts</a></li>
-                        <li><a href="table-data-table.html">Data Tables</a></li>
-                        <li><a href="table-footable.html">Footable</a></li>
-                        <li><a href="table-jsgrid.html">Js Grid Table</a></li>
-                        <li><a href="table-responsive.html">Responsive Table</a></li>
-                        <li><a href="table-bootstrap.html">Bootstrap Tables</a></li>
-                        <li><a href="table-editable-table.html">Editable Table</a></li>
-                    </ul>
-                </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-widgets"></i><span class="hide-menu">Widgets</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="widget-data.html">Data Widgets</a></li>
-                        <li><a href="widget-apps.html">Apps Widgets</a></li>
-                        <li><a href="widget-charts.html">Charts Widgets</a></li>
-
-                    </ul>
-                </li>
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
